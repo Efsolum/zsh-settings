@@ -9,5 +9,7 @@ export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=$ZDOTDIR/history
 
-[[ -f $package_dir/zfunctions/index ]] && \
-		source $package_dir/zfunctions/index
+zfunctions=$package_dir/zfunctions/index
+[[ -f $zfunctions ]] && \
+		source $zfunctions
+unset zfunctions
