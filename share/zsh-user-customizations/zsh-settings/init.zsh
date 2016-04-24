@@ -7,3 +7,6 @@ source $package_dir/options.zsh
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=$ZDOTDIR/history
+
+[[ -f $package_dir/zfunctions/index ]] && \
+		source $package_dir/zfunctions/index

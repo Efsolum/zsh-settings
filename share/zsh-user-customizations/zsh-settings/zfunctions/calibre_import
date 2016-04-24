@@ -1,0 +1,5 @@
+# -*- mode: sh; sh-shell: zsh;-*-
+
+cd /media/Erudite
+calibredb add --duplicates --library-path Imported/ ~/Downloads/Books/
+cd $HOME
