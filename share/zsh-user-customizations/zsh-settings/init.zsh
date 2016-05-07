@@ -12,6 +12,12 @@ export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=$ZDOTDIR/history
 
+# gnupg & gnupg2 config & data directory
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
+
+# Git config file path
+export GIT_CONFIG=$XDG_CONFIG_HOME/gitconfig
+
 zfunctions=$package_dir/zfunctions/index
 [[ -f $zfunctions ]] && \
 		source $zfunctions
