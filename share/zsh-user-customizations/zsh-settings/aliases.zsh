@@ -18,7 +18,8 @@ alias noblank='xset -dpms; xset s off'
 alias lockscreen='i3lock -d -c 000070'
 alias zshrc='source $ZDOTDIR/.zshrc'
 alias src="source $ZDOTDIR/.z{shenv,shrc,login}"
-alias exzsh='exec zsh -li'
+alias rzsh='exec env -i LANG=$LANG zsh -li'
+alias rpane='tmux respawn-pane -k'
 
 # APT aliases
 alias apts='apt-cache search'
