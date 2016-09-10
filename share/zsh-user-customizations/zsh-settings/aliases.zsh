@@ -8,7 +8,7 @@ alias lpe=load_project_env
 alias npd=new_project_dir
 
 # Flash/Portable drive related aliases
-if [[ -f $(type udisksctl) ]]; then
+if [[ -f $(which udisksctl) ]]; then
 		alias uds="udisksctl status"
 		alias udm="udisksctl mount --block-device"
 		alias udu="udisksctl unmount --block-device"
@@ -24,7 +24,7 @@ alias rzsh='exec env -i LANG=$LANG zsh -li'
 alias rpane='tmux respawn-pane -k'
 
 # APT aliases
-if [[ -f $(type apt-cache) ]]; then
+if [[ -f $(which apt-cache) ]]; then
 		alias apts='apt-cache search'
 		alias aptf='apt-file search'
 		alias aptu="print 'apt-get update && apt-file update' | sudo zsh -s"
@@ -40,7 +40,7 @@ alias sshx="ssh-add -x"
 alias sshX="ssh-add -X"
 
 # Sync aliases
-if [[ -f $(type unison) ]]; then
+if [[ -f $(which unison) ]]; then
 		alias syncpersonal="unison personal -batch; unison personal"
 		alias syncprojects="unison projects -batch; unison projects"
 		alias syncarchived="unison archived -batch; unison archived"
