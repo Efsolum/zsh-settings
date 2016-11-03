@@ -2,23 +2,19 @@
 
 local LOG_PATH="$HOME/History/logs/recoll"
 local LOG_FILE="$LOG_PATH/recoll-$(date +%s).log"
-local INDEX_PATH='/media/Erudite/Indexes'
+local INDEX_PATH="${HOME}/Libraries/Indexes"
 
 local library_list
 library_list=(
-		'darkarts'
-		'fiction'
-		'imported'
-		'personal_development'
-		'reference'
-		'sort'
-		'linux_doc'
+		'local-imported'
+		'local-reference'
+		'local-sort'
 )
 
-for i in "${library_list[@]}"
+for ((i = 1; i <= ${#library_list[@]}; i++))
 do
-		local recoll_confdir="$INDEX_PATH/$i"
-		echo "Processing ${(C)i} Library"
+		local recoll_confdir="${INDEX_PATH}/$library_list[$i]"
+		echo "Processing ${(C)library_list[$i]} Library"
 		echo $recoll_confdir >> $LOG_FILE
 		RECOLL_CONFDIR=$recoll_confdir \
 									command recollindex >>&| $LOG_FILE

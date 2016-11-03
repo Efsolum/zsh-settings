@@ -1,5 +1,9 @@
 # -*- mode: sh; sh-shell: zsh;-*-
 
-cd /media/Erudite
-calibredb add --duplicates --library-path Imported/ ~/Downloads/Books/
+local TARGET_PATH="${HOME}/Libraries"
+local LIBRARY="Imported/"
+local IMPORT_PATH="${HOME}/Downloads/Books/"
+
+cd $TARGET_PATH
+calibredb add --duplicates --library-path $LIBRARY $IMPORT_PATH
 cd $HOME

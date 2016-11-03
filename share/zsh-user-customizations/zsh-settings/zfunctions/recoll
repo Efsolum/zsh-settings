@@ -6,7 +6,7 @@ envstore save DISPLAY
 [[ -z $RECOLL_CONFDIR ]] || envstore save RECOLL_CONFDIR
 
 [[ -n $2 ]] && export DISPLAY=:$2
-local recoll_confdir=/media/Erudite/Indexes/$1
+local recoll_confdir=${HOME}/Libraries/Indexes/$1
 [[ -d $recoll_confdir ]] || mkdir -p $recoll_confdir
 RECOLL_CONFDIR=$recoll_confdir command recoll &> /dev/null &
 
